@@ -24,7 +24,6 @@
   <img src="https://raw.githubusercontent.com/TadashiDevs/tadakey2fa/main/resources/tadakey2fa-demostration.gif" alt="TadaKey 2FA Demostration" width="128">
 </p>
 
-
 ## Features
 
 - 🔐 **2FA Protected Vault** - TOTP authentication required to unlock
