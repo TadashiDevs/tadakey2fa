@@ -1,0 +1,75 @@
+{
+  "name": "tadakey2fa",
+  "displayName": "TadaKey 2FA",
+  "description": "Local digital vault for code editors with two-factor authentication",
+  "version": "1.0.0",
+  "publisher": "TadashiDev",
+  "icon": "resources/tadakey2fa-marketplace.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "2fa",
+    "vault",
+    "secrets",
+    "api-keys",
+    "password",
+    "security",
+    "totp",
+    "authenticator"
+  ],
+  "activationEvents": [
+    "onView:tadakey2fa"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tadakey2fa-container",
+          "title": "TadaKey 2FA",
+          "icon": "resources/tadakey2fa-bar.svg"
+        }
+      ]
+    },
+    "views": {
+      "tadakey2fa-container": [
+        {
+          "type": "webview",
+          "id": "tadakey2fa",
+          "name": "Vault"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.10.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TadashiDevs/tadakey2fa"
+  },
+  "bugs": {
+    "url": "https://github.com/TadashiDevs/tadakey2fa/issues"
+  },
+  "homepage": "https://github.com/TadashiDevs/tadakey2fa/blob/main/README.md",
+  "license": "MIT"
+}
