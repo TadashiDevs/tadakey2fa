@@ -1,8 +1,48 @@
+# IDE and test folders
 .vscode/**
 .vscode-test/**
+
+# Source files (we use compiled JS)
 src/**
-node_modules/**
-.gitignore
-*.map
-tsconfig.json
 **/*.ts
+tsconfig.json
+
+# Git files
+.git/**
+.gitignore
+
+# Development files
+*.map
+*.tsbuildinfo
+package-lock.json
+
+# Documentation (exclude from VSIX for smaller size)
+# README.md  ← Keep README for marketplace
+# CHANGELOG.md  ← Keep CHANGELOG for marketplace
+
+# Exclude devDependencies packages completely
+node_modules/@types/**
+node_modules/typescript/**
+
+# Exclude unnecessary files from ALL node_modules
+node_modules/**/*.md
+node_modules/**/*.markdown
+node_modules/**/*.txt
+node_modules/**/LICENSE*
+node_modules/**/license*
+node_modules/**/CHANGELOG*
+node_modules/**/changelog*
+node_modules/**/*.ts
+node_modules/**/*.map
+node_modules/**/.npmignore
+node_modules/**/.travis.yml
+node_modules/**/.jshintrc
+node_modules/**/Makefile
+node_modules/**/test/**
+node_modules/**/tests/**
+node_modules/**/spec/**
+node_modules/**/coverage/**
+node_modules/**/.package-lock.json
+
+# Demo files (large GIF - not needed in VSIX)
+resources/tadakey2fa-demostration.gif
