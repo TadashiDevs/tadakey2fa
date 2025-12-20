@@ -21,7 +21,7 @@
 ## Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TadashiDevs/tadakey2fa/main/resources/tadakey2fa-demostration.gif" alt="TadaKey 2FA Demostration" width="128">
+  <img src="https://raw.githubusercontent.com/TadashiDevs/tadakey2fa/main/resources/tadakey2fa-demostration.gif" alt="TadaKey 2FA Demostration" width="500">
 </p>
 
 ## Features
