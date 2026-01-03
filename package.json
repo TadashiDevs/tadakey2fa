@@ -2,7 +2,7 @@
   "name": "tadakey2fa",
   "displayName": "TadaKey 2FA",
   "description": "Local digital vault for code editors with two-factor authentication",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "TadashiDev",
   "icon": "resources/tadakey2fa-marketplace.png",
   "engines": {

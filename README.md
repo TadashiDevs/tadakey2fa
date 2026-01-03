@@ -47,6 +47,66 @@
 3. Search for "TadaKey 2FA"
 4. Click Install
 
+<details>
+<summary>🐧 <strong>Linux Security Requirements</strong> (Click to expand)</summary>
+
+If you encounter the error **"An OS keyring couldn't be identified"** or extension secrets are not saving, follow these steps:
+
+### 1. Install Dependencies
+
+Choose the command for your distribution:
+
+| Distribution | Command |
+|--------------|---------|
+| **Arch Linux / Manjaro** | `sudo pacman -S gnome-keyring libsecret seahorse` |
+| **Debian / Ubuntu / Mint** | `sudo apt install gnome-keyring libsecret-1-0 seahorse` |
+| **Fedora** | `sudo dnf install gnome-keyring libsecret seahorse` |
+
+### 2. Setup the Keyring (GUI)
+
+1. Open **Seahorse** (search for "Passwords and Keys" in your menu)
+2. Click the **+** button and select **"Password Keyring"**
+3. Name it exactly: `Login`
+4. Right-click on the new "Login" keyring and select **"Set as default"**
+5. Ensure the padlock icon is **open** (Unlocked)
+
+### 3. Configure your Editor
+
+You must tell the editor to use the system keyring:
+
+1. Open the Command Palette (`Ctrl+Shift+P`)
+2. Type: `Preferences: Configure Runtime Arguments`
+3. This will open `argv.json`
+4. Add the following line (ensure correct JSON commas):
+   ```json
+   "password-store": "gnome"
+   ```
+5. Restart your editor completely
+
+### 🛠️ Fix: "InvalidStateError: Failed to register a ServiceWorker"
+
+If after configuring the keyring the extension shows a "Service Worker" or "Invalid State" error, the interface cache is corrupted. Clear it manually:
+
+1. **Close the editor completely**
+2. **Delete the Service Worker cache** (choose your editor):
+   ```bash
+   # For VS Code
+   rm -rf ~/.config/Code/"Service Worker"
+   
+   # For VSCodium
+   rm -rf ~/.config/VSCodium/"Service Worker"
+   
+   # For Antigravity
+   rm -rf ~/.config/Antigravity/"Service Worker"
+   ```
+3. **Optional verification** - Find the folder before deleting:
+   ```bash
+   find ~/.config -name "Service Worker" -type d 2>/dev/null
+   ```
+4. **Restart your editor** - The interface will regenerate cleanly
+
+</details>
+
 ## Getting Started
 
 1. Click the TadaKey icon in the Activity Bar
